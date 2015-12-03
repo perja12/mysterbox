@@ -13,7 +13,7 @@ function onButtonClick() {
     
     navigator.bluetooth.requestDevice({
 	filters: [{
-	    services: [0xa495ff20c5b14b44b5121370f02d74de]
+	    services: ['a495ff20-c5b1-4b44-b512-1370f02d74de']
 	}]
     })
 	.then(device => device.connectGATT())
