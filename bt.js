@@ -31,7 +31,7 @@ function onButtonClick(lock) {
 	.then(characteristic => {
 	    return characteristic.writeValue(new Uint8Array([lock]));
 	})
-	.then(server => disconnect())
+	.then(server => server.disconnect())
 	.then(() => {
 	    console.log('Success!');
 	})
