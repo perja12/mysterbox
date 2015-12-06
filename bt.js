@@ -43,10 +43,7 @@ function onButtonClick(lock) {
 	})
 	.then(() => {
 	    console.log('All done');
-	    if (gattServer) {
-		console.log(gattServer.connected);
-		gattServer.disconnect();
-	    }
+	}
 	});
 }
    
