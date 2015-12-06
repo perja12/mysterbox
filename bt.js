@@ -35,10 +35,17 @@ function onButtonClick(lock) {
 	.then(characteristic => {
 	    return characteristic.writeValue(new Uint8Array([lock]));
 	})
-	.then(server => gattServer.disconnect())
 	.then(() => {
 	    console.log('Success!');
 	})
-	.catch(error => { console.log(error); });
+	.catch(error => { 
+	    console.log(error); 
+	})
+	.then(() => {
+	    console.log('All done');
+	    if (gattServer) {
+		gattServer.disconnect();
+	    }
+	});
 }
    
