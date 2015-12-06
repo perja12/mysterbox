@@ -14,6 +14,7 @@ function requestDevice() {
 
 function onButtonClick(lock) {
     'use strict';
+    var gattServer;
 
     if (!navigator.bluetooth) {
 	console.log('Web Bluetooth API is not available.\n' +
@@ -25,13 +26,16 @@ function onButtonClick(lock) {
 
     devicePromise = devicePromise || requestDevice();
     
-    devicePromise.then(device => device.connectGATT())
+    devicePromise.then(device => {
+	gattServer = device.connectGATT();
+	return gattServer;
+    })
 	.then(server => server.getPrimaryService('a495ff20-c5b1-4b44-b512-1370f02d74de'))
 	.then(service => service.getCharacteristic('a495ff21-c5b1-4b44-b512-1370f02d74de'))
 	.then(characteristic => {
 	    return characteristic.writeValue(new Uint8Array([lock]));
 	})
-	.then(server => server.disconnect())
+	.then(server => gattServer.disconnect())
 	.then(() => {
 	    console.log('Success!');
 	})
