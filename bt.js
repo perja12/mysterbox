@@ -43,7 +43,6 @@ function onButtonClick(lock) {
 	})
 	.then(() => {
 	    console.log('All done');
-	}
 	});
 }
    
