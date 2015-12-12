@@ -5,7 +5,7 @@ document.querySelector('.lock').addEventListener('click', function() {
 });
 
 document.querySelector('.unlock').addEventListener('click', function() {
-    onButtonClick(0);
+    onButtonClick(2);
 });
 
 function requestDevice() {
