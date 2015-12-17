@@ -66,11 +66,12 @@ function onButtonClick(lock) {
 	.then(() => {
 	    console.log('Success!');
 	})
+	.then(() => {
+	    gattServer.disconnect();
+	    console.log('All done');
+	});
 	.catch(error => { 
 	    console.log(error); 
 	})
-	.then(() => {
-	    console.log('All done');
-	});
 }
    
