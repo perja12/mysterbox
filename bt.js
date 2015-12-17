@@ -60,15 +60,10 @@ function onButtonClick(lock) {
 	    return server.getPrimaryService('a495ff20-c5b1-4b44-b512-1370f02d74de');
 	})
 	.then(service => service.getCharacteristic('a495ff21-c5b1-4b44-b512-1370f02d74de'))
-	.then(characteristic => {
-	    return characteristic.writeValue(new Uint8Array([lock]));
-	})
-	.then(() => {
-	    console.log('Success!');
-	})
+	.then(characteristic => characteristic.writeValue(new Uint8Array([lock])))
 	.then(() => {
 	    gattServer.disconnect();
-	    console.log('All done');
+	    console.log('Success!');
 	})
 	.catch(error => { 
 	    console.log(error); 
