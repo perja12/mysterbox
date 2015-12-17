@@ -69,9 +69,9 @@ function onButtonClick(lock) {
 	.then(() => {
 	    gattServer.disconnect();
 	    console.log('All done');
-	});
+	})
 	.catch(error => { 
 	    console.log(error); 
-	})
+	});
 }
    
