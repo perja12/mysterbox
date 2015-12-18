@@ -61,6 +61,13 @@ function onButtonClick(lock) {
 	})
 	.then(service => service.getCharacteristic('a495ff21-c5b1-4b44-b512-1370f02d74de'))
 	.then(characteristic => characteristic.writeValue(new Uint8Array([lock])))
+        .then(function() {
+	    return new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve(0);
+                }, 1000);
+	    })
+	})
 	.then(() => {
 	    gattServer.disconnect();
 	    console.log('Success!');
