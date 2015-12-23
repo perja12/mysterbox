@@ -2,18 +2,9 @@ var devicePromise;
 var today = new Date();
 var dd = today.getDate();
 
-var answers = {13: [9, 4], 
-	       14: [9, 4],
-	       15: [5, 7],
-	       16: [5, 6],
-	       17: [5, 6],
-	       18: [5, 6],
-	       19: [5, 6],
-	       20: [5, 6],
-	       21: [5, 6],
-	       22: [5, 6],
-	       23: [5, 6],
-	       24: [5, 6]
+var answers = {
+	       23: ['j', 'g'],
+	       24: ['j', 'g']
 	      };
 
 /*
@@ -25,8 +16,8 @@ document.querySelector('.lock').addEventListener('click', function() {
 document.querySelector('#unlock').addEventListener('click', function() {
     console.log(dd, answers[dd][0]);
     console.log(document.querySelector('#nora').value);
-    if (Number(document.querySelector('#nora').value) === answers[dd][0] && 
-	Number(document.querySelector('#marte').value) === answers[dd][1]) 
+    if (document.querySelector('#nora').value.toLowerCase() === answers[dd][0] && 
+	document.querySelector('#marte').value.toLowerCase() === answers[dd][1]) 
     { 
 	console.log("Correct");
 	onButtonClick(2);
