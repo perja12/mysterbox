@@ -16,6 +16,7 @@ document.querySelector('.lock').addEventListener('click', function() {
 document.querySelector('#unlock').addEventListener('click', function() {
     console.log(dd, answers[dd][0]);
     console.log(document.querySelector('#nora').value);
+    /*
     if (document.querySelector('#nora').value.toLowerCase() === answers[dd][0] && 
 	document.querySelector('#marte').value.toLowerCase() === answers[dd][1]) 
     { 
@@ -24,7 +25,8 @@ document.querySelector('#unlock').addEventListener('click', function() {
     } else {
 	console.log("Fail");
     }
-    
+    */
+    onButtonClick(2);
 });
 
 function requestDevice() {
