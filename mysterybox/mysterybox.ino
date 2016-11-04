@@ -1,5 +1,7 @@
 #include <Servo.h>
 
+// Sketch for LightBlue Bean: https://punchthrough.com/bean
+
 Servo servo;
 
 // The top secret pin code
