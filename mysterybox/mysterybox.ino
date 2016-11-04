@@ -1,6 +1,7 @@
 #include <Servo.h>
 
 // Sketch for LightBlue Bean: https://punchthrough.com/bean
+// TODO: add parts list
 
 Servo servo;
 
