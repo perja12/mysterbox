@@ -3,7 +3,7 @@
 // Sketch for LightBlue Bean: https://punchthrough.com/bean
 // TODO: add parts list
 
-// Parts: servo, led
+// Parts: servo, led, button
 
 Servo servo;
 
