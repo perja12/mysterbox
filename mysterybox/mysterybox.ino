@@ -4,10 +4,10 @@ Servo servo;
 
 // The top secret pin codes
 const int code_for_day[] = { 
-  11, // 1
+  11,   // 1
   1210, // 2
   1064, // 3
-  14, // 4 
+  155,  // 4 
   15, // 5
   16, // 6 
   17, // 7 
